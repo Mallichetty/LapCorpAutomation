@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
-		features = { "src/test/java/featureFiles/priceValidation.feature" }, glue = { "stepDefinitions" },
-		plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
-
+        features = "src/test/java/featureFiles",
+        glue = {"stepDefinitions"},
+        plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+                "pretty",
+                "html:target/cucumber-reports/cucumber.html"},
+        monochrome = true
 )
-
 public class TestRunner {
 }
